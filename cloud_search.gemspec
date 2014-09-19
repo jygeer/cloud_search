@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Willian Fernandes"]
   gem.email         = ["willian@willianfernandes.com.br"]
   gem.homepage      = "http://rubygems.org/gems/cloud_search"
-  gem.summary       = "A wraper to Amazon CloudSearch's API"
+  gem.summary       = "A wrapper to Amazon CloudSearch's API"
   gem.description   = gem.summary
 
   gem.files         = `git ls-files`.split($/)
@@ -26,6 +26,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "webmock"
 
   # gem.add_dependency "em-http-request"       , "~> 1.0"
-  gem.add_dependency "rest-client", "~> 1.6.7"
+  gem.add_dependency "rest-client", "~> 1.7.2"
 end
 

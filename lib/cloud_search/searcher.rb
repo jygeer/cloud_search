@@ -94,7 +94,7 @@ module CloudSearch
 
       "#{CloudSearch.config.search_url}/search".tap do |u|
         u.concat("?#{query_parameter}=#{query}&size=#{items_per_page}&start=#{start}")
-        u.concat("&return-fields=#{URI.escape(@fields.join(","))}") if @fields.any?
+        u.concat("&return=#{URI.escape(@fields.join(","))}") if @fields.any?
         u.concat("&#{filter_expression}") if @filters.any?
         u.concat("&facet=#{@facets.join(',')}") if @facets.any?
         u.concat(@facets_constraints.map do |k,v|

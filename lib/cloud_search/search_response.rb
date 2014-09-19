@@ -36,6 +36,23 @@ module CloudSearch
       (@current_page - 1) * items_per_page
     end
 
+    def next_page
+      (@current_page + 1) unless last_page?
+    end
+
+    def prev_page
+       (@current_page - 1) unless first_page?
+    end
+    # First page of the collection ?
+    def first_page?
+      @current_page == 1
+    end
+
+    # Last page of the collection?
+    def last_page?
+      @current_page >= total_pages
+    end
+
     alias :page_size :items_per_page
     alias :limit_value :items_per_page
     alias :total_entries :hits

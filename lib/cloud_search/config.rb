@@ -33,7 +33,7 @@ module CloudSearch
     end
 
     def api_version
-      @api_version ||= "2011-02-01"
+      @api_version ||= "2013-01-01"
     end
 
     def configuration_url
