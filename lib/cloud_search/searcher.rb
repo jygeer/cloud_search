@@ -94,6 +94,7 @@ module CloudSearch
 
       "#{CloudSearch.config.search_url}/search".tap do |u|
         u.concat("?#{query_parameter}=#{query}&size=#{items_per_page}&start=#{start}")
+        u.concat("&q.parser=structured&q=query") if boolean_query?
         u.concat("&return=#{URI.escape(@fields.join(","))}") if @fields.any?
         u.concat("&#{filter_expression}") if @filters.any?
         u.concat("&facet=#{@facets.join(',')}") if @facets.any?
@@ -108,7 +109,7 @@ module CloudSearch
     private
 
     def query_parameter
-      boolean_query? ? "bq" : "q"
+      "q" # boolean_query? ? "bq" : "q"
     end
 
     def filter_expression
