@@ -34,8 +34,8 @@ module CloudSearch
     end
 
     def as_json
-      {:type => type, :id => id, :version => version}.tap do |hash|
-        hash.merge!(:lang => lang, :fields => fields) if type == "add"
+      {:type => type, :id => id}.tap do |hash|
+        hash.merge!(:fields => fields) if type == "add"
       end
     end
 
