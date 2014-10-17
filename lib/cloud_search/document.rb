@@ -24,10 +24,10 @@ module CloudSearch
     def valid?
       @errors = {}
       run_id_validations
-      run_version_validations
+      #run_version_validations # no longer required 2013
       run_type_validations
       if type == "add"
-        run_lang_validations
+        # run_lang_validations # no longer required 2013
         run_fields_validations
       end
       errors.empty?
